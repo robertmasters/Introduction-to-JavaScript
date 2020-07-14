@@ -27,7 +27,7 @@ if (x<y){
 
 
 let n = "503";
-console.log(Number(n))
+console.log(Number(n));
 
 
 //Task d: Write a function to multiply a*b 
@@ -47,7 +47,9 @@ function dogyears(human){
     return human*7;
 }
 
-console.log(dogyears(2))
+
+
+console.log(dogyears(2));
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -69,21 +71,61 @@ console.log(dogyears(2))
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
 function dogFeeder(pounds, years){
-    dog = "adult";
+    //declaring the variables
+    let dog = "adult"; let bodyWeight = 0;
+    // converting years to dog years
+    let dogYears = years/7
+    //if else: used to find out if dog is puppy or if not
     if (years<1){
         dog = "puppy";
-        years = years/7
     }
-    let numberOfPounds = 0;
 
-    if (dog === "adult"){
-        if (punds<=5){
-
+    //calculations for adult dogs
+    if (dog==="adult"){
+        // up to 5 lbs - 5% of their body weight
+        if(pounds<=5){
+            bodyWeight = pounds*.05;
         }
-    if (dog === "puppy")
-    return numberOfPounds;.
+        // 6 - 10 lbs - 4% of their body weight 
+        else if (pounds<=10){
+            bodyWeight = pounds*.04;
+        }
+        // 11 - 15 lbs - 3% of their body weight 
+        else if (pounds<=15){
+            bodyWeight = pounds*.03;
+        }        
+        // > 15lbs - 2% of their body weight 
+        else if (pounds>15){
+            bodyWeight = pounds*.02;
+        }
+    }
+    // if (dog==="puppy"){
+    //     //calculations for puppy
+
+    //     // 2 - 4 months 10% of their body weight
+    //     if (){
+    //         bodyWeight = pounds*.1;
+    //         console.log(bodyWeight);
+    //     }
+    //     // 4 - 7 months 5% of their body weight 
+    //     else if (){
+    //         bodyWeight = pounds*.05;
+    //         console.log(bodyWeight);
+    //     }
+
+    //     // 7 - 12 months 4% of their body weight
+    //     else if (){
+    //         bodyWeight = pounds*.04;
+    //         console.log(bodyWeight);
+    //     }
+    // }
+    return bodyWeight;
 
 }
+
+console.log(dogFeeder(15,1));
+console.log(dogFeeder(15,0.16))
+
 
 
 
@@ -94,7 +136,48 @@ function dogFeeder(pounds, years){
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+
+
+  function rps(hand){
+    let computer = Math.floor(Math.random() * Math.floor(3));
+    console.log("computer: " +computer);
+    let cp=" ";
+    if (computer===0){
+        cp = "rock";
+    } else if(computer===1){
+        cp = "paper";
+    } else if (computer===2){
+        cp = "sissors";
+    }
+    console.log("cp: "+ cp + " vs you: "+hand);
+    //rock beats sissors
+    if (hand=== "rock" && cp ==="sissors"){
+        return "you win";
+        //rock looses to paper
+    } else if (hand ==="rock" && cp==="paper"){
+        return "you loose";
+        //paper beats rock
+    } else if (hand === "paper" && cp === "rock"){
+        return "you win";
+        //paper looses to sissors
+    } else if (hand === " paper" && cp ==="sissors"){
+        return "you loose";
+        //sissors beats paper
+    } else if (hand === "sissors" && cp === "paper"){
+        return "you win";
+        //sissors looses to rock
+    } else if (hand === " sissors" && cp ==="rock"){
+        return "you loose";
+    }
+    
+    //tie
+    if (cp===hand){
+        return "tie";
+    }
+}
+
+console.log(rps("rock"))
+
   
 
 /************************************************************** Task 5 **************************************************************/
@@ -102,12 +185,22 @@ function dogFeeder(pounds, years){
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
 
+function kmToMiles(km){
+    miles = km*0.621371;
+    return miles;
+}
 
+console.log(kmToMiles(2));
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+function feetToCm(feet){
+    feet = feet*30.48;
+    return feet;
+}
 
+console.log(feetToCm(2));
 
 
 
@@ -117,7 +210,13 @@ function dogFeeder(pounds, years){
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
 
+function annoyingSong(num){
+    for (let i = num;i>0;i--){
+        console.log(i+" bottles of soda on the wall, "+i+ " bottles of soda, take one down pass it around "+ (i-1) + " bottles of soda on the wall");
+    }
+}
 
+console.log(annoyingSong(10));
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -130,7 +229,34 @@ function dogFeeder(pounds, years){
 //and anything below 60 should be F
   
 
-  
+  function gradesOfDoom(mark){
+    //90s should be A 
+    if (mark>89){
+        return 'A';
+    }
+    //80s should be B 
+    else if (mark>79){
+        return 'B';
+    }
+    //70s should be Cs 
+    else if (mark>69){
+        return 'C';
+    }
+    //60s should be D 
+    else if (mark>59){
+        return 'D';
+    }
+    //and anything below 60 should be F
+    else if (mark<60){
+        return 'F';
+    }
+  }
+
+  console.log(gradesOfDoom(99))//test A
+  console.log(gradesOfDoom(87))//test b
+  console.log(gradesOfDoom(70.2))//test c
+  console.log(gradesOfDoom(60))//test d
+  console.log(gradesOfDoom(-3))//test f
   
 
 /************************************************************** Stretch **************************************************************/
@@ -145,8 +271,6 @@ function dogFeeder(pounds, years){
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
 
 
 
