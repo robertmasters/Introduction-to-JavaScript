@@ -72,19 +72,19 @@ console.log(dogyears(2));
   
 function dogFeeder(pounds, years){
     //declaring the variables
-    let dog = "adult"; let bodyWeight = 0;
-    // converting years to dog years
-    let dogYears = years/7
+    let dog = '';
     //if else: used to find out if dog is puppy or if not
     if (years<1){
-        dog = "puppy";
+         dog = 'puppy';
+    } else if (years>=1){
+        dog= 'adult';
     }
 
     //calculations for adult dogs
-    if (dog==="adult"){
+    if (dog==='adult'){
         // up to 5 lbs - 5% of their body weight
         if(pounds<=5){
-            bodyWeight = pounds*.05;
+            let bodyWeight = pounds*.05;
         }
         // 6 - 10 lbs - 4% of their body weight 
         else if (pounds<=10){
@@ -99,32 +99,38 @@ function dogFeeder(pounds, years){
             bodyWeight = pounds*.02;
         }
     }
-    // if (dog==="puppy"){
-    //     //calculations for puppy
 
-    //     // 2 - 4 months 10% of their body weight
-    //     if (){
-    //         bodyWeight = pounds*.1;
-    //         console.log(bodyWeight);
-    //     }
-    //     // 4 - 7 months 5% of their body weight 
-    //     else if (){
-    //         bodyWeight = pounds*.05;
-    //         console.log(bodyWeight);
-    //     }
 
-    //     // 7 - 12 months 4% of their body weight
-    //     else if (){
-    //         bodyWeight = pounds*.04;
-    //         console.log(bodyWeight);
-    //     }
-    // }
+
+    if (dog==='puppy'){
+        //calculations for puppy
+        let month = 1/12;
+        //.083 = 1 month in decimal form
+        // 2 - 4 months human months 10% of their body weight
+        if (years>= month*2 && years<=month*4){
+            bodyWeight = pounds*.1;
+            console.log('yo: '+bodyWeight);
+        }
+        // 4 - 7 months 5% of their body weight 
+        else if (years> month*4 && years<=month*7){
+            bodyWeight = pounds*.05;
+            console.log('yo: '+bodyWeight);
+        }
+
+        // 7 - 12 months 4% of their body weight
+        else if (years> month*7 && years<=month*12){
+            bodyWeight = pounds*.04;
+            console.log('yo: '+bodyWeight);
+        } else {
+        console.log('no: '+bodyWeight);
+        }
+    }
     return bodyWeight;
 
 }
 
-console.log(dogFeeder(15,1));
-console.log(dogFeeder(15,0.16))
+console.log("adult: " + dogFeeder(15,3)); // test adult
+console.log("Puppy: " + dogFeeder(15,.2)) // test puppy
 
 
 
@@ -214,6 +220,7 @@ function annoyingSong(num){
     for (let i = num;i>0;i--){
         console.log(i+" bottles of soda on the wall, "+i+ " bottles of soda, take one down pass it around "+ (i-1) + " bottles of soda on the wall");
     }
+    return ":)";
 }
 
 console.log(annoyingSong(10));
