@@ -2,33 +2,52 @@
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
 
+let votingAge = 19;
+if (votingAge>18){
+    console.log(true);
+}
 
+// or
 
+console.log (votingAge>18);
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
 
-
+let x = 0;
+let y = 3;
+if (x<y){
+    x=x+2;
+} else{
+    x = y;
+}
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
 
-
+let n = "503";
+console.log(Number(n))
 
 
 //Task d: Write a function to multiply a*b 
 
 
 
-
+function mult(a,b){
+    return a*b;
+}
+console.log(mult(2,3));
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
+function dogyears(human){
+    return human*7;
+}
 
-
+console.log(dogyears(2))
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -49,7 +68,22 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
+function dogFeeder(pounds, years){
+    dog = "adult";
+    if (years<1){
+        dog = "puppy";
+        years = years/7
+    }
+    let numberOfPounds = 0;
 
+    if (dog === "adult"){
+        if (punds<=5){
+
+        }
+    if (dog === "puppy")
+    return numberOfPounds;.
+
+}
 
 
 
