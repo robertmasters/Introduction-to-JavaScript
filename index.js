@@ -271,7 +271,19 @@ console.log(annoyingSong(10));
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+function vowelsInString(vowelsWithin){
+    let count = 0;  //used to count the number of vowels that are insisde of the string
+    let vowels = 'aeiou'; // going to be used to compare strings
 
+    for (let i=0; i< vowelsWithin.length;i++){ // .length shows me all the characters in the string vowelWithin.
+        if(vowels.indexOf(vowelsWithin[i].toLowerCase()) > -1) { // indexOf shows me the index number of the string and if the character is not found then it displays a -1, so all values greater than -1 will be within the string vowelWithin.
+            count ++;
+        }
+    }
+    return count;
+}
+
+console.log(vowelsInString('Where are you now'));
 
 
 
@@ -281,3 +293,45 @@ console.log(annoyingSong(10));
 
 
 
+
+function rps(hand){
+    let computer = Math.floor(Math.random() * Math.floor(3)); // allows me to get only 3 options 0,1,2 at random each time.
+    console.log("computer: " +computer);
+    let cp=" ";
+    if (computer===0){
+        cp = "rock";
+    } else if(computer===1){
+        cp = "paper";
+    } else if (computer===2){
+        cp = "sissors";
+    }
+    console.log("cp: "+ cp + " vs you: "+hand);
+    //rock beats sissors
+    if (hand=== "rock" && cp ==="sissors"){
+        return "you win";
+        //rock looses to paper
+    } else if (hand ==="rock" && cp==="paper"){
+        return "you loose";
+        //paper beats rock
+    } else if (hand === "paper" && cp === "rock"){
+        return "you win";
+        //paper looses to sissors
+    } else if (hand === " paper" && cp ==="sissors"){
+        return "you loose";
+        //sissors beats paper
+    } else if (hand === "sissors" && cp === "paper"){
+        return "you win";
+        //sissors looses to rock
+    } else if (hand === " sissors" && cp ==="rock"){
+        return "you loose";
+    }
+    
+    //tie
+    if (cp===hand){
+        return "tie";
+    }
+}
+
+let hand = window.prompt("Enter either rock, paper, or sissors"); // stored user input into variable hand, window.prompt() prompts user with a message and give user an area to store the input.
+
+console.log(rps(hand))
