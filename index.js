@@ -316,13 +316,13 @@ function rps(hand){
     } else if (hand === "paper" && cp === "rock"){
         return "you win";
         //paper looses to sissors
-    } else if (hand === " paper" && cp ==="sissors"){
+    } else if (hand === "paper" && cp ==="sissors"){
         return "you loose";
         //sissors beats paper
     } else if (hand === "sissors" && cp === "paper"){
         return "you win";
         //sissors looses to rock
-    } else if (hand === " sissors" && cp ==="rock"){
+    } else if (hand === "sissors" && cp ==="rock"){
         return "you loose";
     }
     
