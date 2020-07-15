@@ -109,18 +109,18 @@ function dogFeeder(pounds, years){
         // 2 - 4 months human months 10% of their body weight
         if (years>= month*2 && years<=month*4){
             bodyWeight = pounds*.1;
-            console.log('yo: '+bodyWeight);
+            // console.log('yo: '+bodyWeight);
         }
         // 4 - 7 months 5% of their body weight 
         else if (years> month*4 && years<=month*7){
             bodyWeight = pounds*.05;
-            console.log('yo: '+bodyWeight);
+            // console.log('yo: '+bodyWeight);
         }
 
         // 7 - 12 months 4% of their body weight
         else if (years> month*7 && years<=month*12){
             bodyWeight = pounds*.04;
-            console.log('yo: '+bodyWeight);
+            // console.log('yo: '+bodyWeight);
         } else {
         console.log('no: '+bodyWeight);
         }
@@ -202,7 +202,8 @@ console.log(kmToMiles(2));
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
 function feetToCm(feet){
-    feet = feet*30.48;
+    let cm = 0;
+    feet = cm*30.48;
     return feet;
 }
 
